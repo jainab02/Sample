@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Employee data</title>
+  </head>
+  <body>
+    <div class="container">
+      <h2><u>Employee List</u></h2><br />
+      {% if not employees %}
+        <table>
+          <THead>
+            <th>Employee_Name</th>
+            <th>Designation</th>
+            <th>Employee_Mo</th>
+            <th>Salary</th>
+            <th>Department</th>
+          </THead>
+          {% for emp in employees %}
+            <tr>
+              <td>{{ emp.Employee_Name }}</td>
+              <td>{{ emp.Designation }}</td>
+              <td>{{ emp.Employee_Mo }}</td>
+              <td>{{ emp.Department }}</td>
+            </tr>
+          {% endfor %}
+        </table>
+      {% else %}
+        <p>No record found</p>
+      {% endif %}
+    </div>
+  </body>
+</html>
